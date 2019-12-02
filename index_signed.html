@@ -3,6 +3,7 @@
 
 <head>
   <title>Auto planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -33,7 +34,7 @@
           <div class="container-fluid">
             <div id="myToast" class="toast  float-right" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
               <div class="toast-header">
-                <img src="icon/done-24px.svg" class="rounded mr-2" alt="...">
+                <img src="icon/done-24px.svg" class="rounded mr-2" alt="done">
                 <strong class="mr-auto">Success</strong>
                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -43,10 +44,8 @@
                 Welcome!
               </div>
             </div>
-          
-            
           </div>
-  
+
           <div class="row">
             <div id="userbuttons" style="display:none">
               <button type="button" id="sign_out" class="btn btn-outline-danger my-2 my-sm-0">Sign Out</button>
@@ -133,7 +132,7 @@
   <script type="text/javascript">
   var h = document.body.clientHeight*0.85;
   $("div[name='flex']").css({"min-height":h});
-  
+
     $(function() {
       var username = UrlParam.paramValues("username");
       if (username != null) {
