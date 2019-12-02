@@ -1,5 +1,7 @@
-(function ($) {
+'use strict';
 
+(function ($) {
+"use strict";
 //user icon toggle
 $("#usericon").click(function() {
   $("#userbuttons").toggle();
