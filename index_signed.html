@@ -30,6 +30,23 @@
               <a class="nav-link" href="plaza.html">Plaza</a>
             </li>
           </ul>
+          <div class="container-fluid">
+            <div id="myToast" class="toast  float-right" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+              <div class="toast-header">
+                <img src="icon/done-24px.svg" class="rounded mr-2" alt="...">
+                <strong class="mr-auto">Success</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="toast-body">
+                Welcome!
+              </div>
+            </div>
+          
+            
+          </div>
+  
           <div class="row">
             <div id="userbuttons" style="display:none">
               <button type="button" id="sign_out" class="btn btn-outline-danger my-2 my-sm-0">Sign Out</button>
@@ -42,21 +59,10 @@
         </div>
       </nav>
     </div>
-    <div id="myToast" style="float:right" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-      <div class="toast-header">
-        <img src="icon/done-24px.svg" class="rounded mr-2" alt="...">
-        <strong class="mr-auto">Success</strong>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        Welcome!
-      </div>
-    </div>
+
     <div class="container-fluid">
       <div class="text-center">
-        <div class="jumbotron jumbotron-fluid">
+        <div name="flex" class="jumbotron jumbotron-fluid">
           <h1 class="display-4">Plan Your Trip!</h1>
           <p class="lead">
             I should like to rise and go, where the golden apples grow. —— Robert Louis Stevenson (1850-1894)</p>
@@ -128,6 +134,9 @@
   <script type="text/javascript" src="assets/js/getUrlParam.js"></script>
   <script type="text/javascript" src="assets/js/functions.js"></script>
   <script type="text/javascript">
+  var h = document.body.clientHeight*0.8;
+  $("div[name='flex']").css({"height":h});
+  
     $(function() {
       var username = UrlParam.paramValues("username");
       if (username != null) {

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="container-fluid sticky-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">Auto Planner</a>
@@ -107,26 +107,28 @@
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="text-center">
-        <div class="jumbotron jumbotron-fluid">
-          <h1 class="display-4">Plan Your Trip!</h1>
-          <p class="lead">
-            I should like to rise and go, where the golden apples grow. —— Robert Louis Stevenson (1850-1894)</p>
-          <hr class="my-4">
-          <h1>Where do you wanna go?</h1>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Neverland" aria-label="Neverland" aria-describedby="button-addon2"></div>
-              <div class="col-md-3">
-                <a href="arrange.html" class="btn btn-outline-secondary" role="button">Head out!</a></div>
-            </div>
+  <div class="container-fluid">
+    <div class="text-center">
+      <div name="flex" class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">Plan Your Trip!</h1>
+        <p class="lead">
+          I should like to rise and go, where the golden apples grow. —— Robert Louis Stevenson (1850-1894)</p>
+        <hr class="my-4">
+        <h1>Where do you wanna go?</h1>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Neverland" aria-label="Neverland" aria-describedby="button-addon2"></div>
+            <div class="col-md-3">
+              <a href="arrange.html" class="btn btn-outline-secondary" role="button">Head out!</a></div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+    
     <div align=center class="container-fluid">
       <label>Expolre More</label><br />
       <img width="50px" src="icon/arrow_drop_down_circle-24px.svg" id="showmore">
@@ -180,6 +182,10 @@
   </div>
   <script type="text/javascript" src="assets\js\functions.js"></script>
   <script type="text/javascript">
+  var h = document.body.clientHeight*0.8;
+  $("div[name='flex']").css({"height":h});
+  
+  
     //check for required inputs
     $("input[name='required']").blur(function() {
       var val = $(this).val();
