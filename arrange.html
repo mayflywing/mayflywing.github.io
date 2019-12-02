@@ -139,7 +139,7 @@
       var count = 0;
       for (var j = 0; j < itemOriginal.length; j++) {
         if (itemOriginal.item(j).value != "") {
-          url += "tag" + count + "=" + itemOriginal.item(j).value+"&";
+          url += "tag" + count + "=" + itemOriginal.item(j).value + "&";
           count++;
         }
       }
@@ -180,7 +180,7 @@
         }
       }
     });
-    
+
     //add tags
     function addTags() {
       var itemOriginal = document.getElementsByName("tagsInput");
@@ -198,4 +198,5 @@
   </script>
   <script type="text/javascript" src="assets/js/functions.js"></script>
 </body>
+
 </html>

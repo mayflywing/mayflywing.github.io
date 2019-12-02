@@ -90,10 +90,11 @@
         <div class="row">
           <div class="col-md-1 col-sm-1">
           </div>
-            <div id="back" class="col-md-3 col-sm-2">
-              <a class="text-dark" href=# onClick="javascript :history.back(-1);">
-            <img src="icon\arrow_back-24px.svg" />
-            <figcaption>Back</figcaption></a>
+          <div id="back" class="col-md-3 col-sm-2">
+            <a class="text-dark" href=# onClick="javascript :history.back(-1);">
+              <img src="icon\arrow_back-24px.svg" />
+              <figcaption>Back</figcaption>
+            </a>
           </div>
         </div>
       </div>
@@ -196,28 +197,29 @@
       }, 800, );
     });
 
-    function shuffle(arra1,seed) {
-        var ctr = arra1.length;
-        var temp,index;
-    // While there are elements in the array
-        while (ctr > 0) {
-    // Pick a random index
-            index = Math.floor(random(seed++)*ctr);
-    // Decrease ctr by 1
-            ctr--;
-    // And swap the last element with it
-            temp = arra1[ctr];
-            arra1[ctr] = arra1[index];
-            arra1[index] = temp;
-        }
-        return arra1;
+    function shuffle(arra1, seed) {
+      var ctr = arra1.length;
+      var temp, index;
+      // While there are elements in the array
+      while (ctr > 0) {
+        // Pick a random index
+        index = Math.floor(random(seed++) * ctr);
+        // Decrease ctr by 1
+        ctr--;
+        // And swap the last element with it
+        temp = arra1[ctr];
+        arra1[ctr] = arra1[index];
+        arra1[index] = temp;
+      }
+      return arra1;
     }
 
     function random(seed) {
-      var x =  Math.sin(seed)*10000;
+      var x = Math.sin(seed) * 10000;
       return x - Math.floor(x);
     }
   </script>
 
 </body>
+
 </html>

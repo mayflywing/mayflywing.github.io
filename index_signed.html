@@ -127,17 +127,16 @@
   </div>
   <script type="text/javascript" src="assets/js/getUrlParam.js"></script>
   <script type="text/javascript" src="assets/js/functions.js"></script>
-  <script type="text/javascript">  
+  <script type="text/javascript">
     $(function() {
       var username = UrlParam.paramValues("username");
-      if(username!=null){
+      if (username != null) {
         var welcome_string = "Welcome, " + username;
         $(".toast-body").html(welcome_string);
-        $('#myToast').toast('show');  
-    }
-    
-  });
+        $('#myToast').toast('show');
+      }
 
+    });
   </script>
 </body>
 
