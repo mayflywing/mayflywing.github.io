@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)http://localhost:8000/route.html?tag0=sssadad&tag1=dasdad&tag2=dasdadsa&tag3=dsadasdssa&tag4=dasdas&tag5=dasdas& -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Route</title>
+  <link rel="stylesheet" href="./Route_files/jquery-confirm.min.css">
+  <link rel="stylesheet" href="./Route_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="./Route_files/jquery-3.4.1.js.下载"></script>
+  <script src="./Route_files/jquery-confirm.min.js.下载"></script>
+  <script src="./Route_files/popper.min.js.下载" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="./Route_files/bootstrap.min.js.下载" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="./Route_files/js" async="" defer=""></script>
+
+<style type="text/css">/*
+<div id="__sound-pirate" class="__sound-pirate-at-left">
+    <a class="__sound-pirate-to-left"><img src="chrome-extension://naaoeihcbaeganoldlfjnomncgdcdnjf/img/arrowl32.png"></a>
+    <a class="__sound-pirate-download" download href=""><img src="chrome-extension://naaoeihcbaeganoldlfjnomncgdcdnjf/img/music32.png"></a>
+    <a class="__sound-pirate-to-right"><img src="chrome-extension://naaoeihcbaeganoldlfjnomncgdcdnjf/img/arrowr32.png"></a>
+</div>
+*/
+#__sound-pirate {
+  margin: 0 4px 4px 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 32px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483647;
+  cursor: pointer;
+  transition: left 1s ease; }
+  #__sound-pirate .__sound-pirate-to-left, #__sound-pirate .__sound-pirate-to-right {
+    display: none;
+    position: absolute;
+    width: 14px;
+    top: 0; }
+  #__sound-pirate .__sound-pirate-to-left {
+    right: 100%; }
+  #__sound-pirate .__sound-pirate-to-right {
+    left: 100%; }
+  #__sound-pirate.__sound-pirate-at-left:hover .__sound-pirate-to-right {
+    display: block; }
+  #__sound-pirate.__sound-pirate-at-right:hover .__sound-pirate-to-left {
+    display: block; }
+  #__sound-pirate.__sound-pirate-at-right {
+    left: calc(100% - 32px - 4px); }
+  #__sound-pirate * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+  #__sound-pirate img {
+    display: block; }
+  #__sound-pirate .__sound-pirate-download {
+    display: block;
+    transform: rotate(0turn);
+    transition: transform 1s ease; }
+</style></head>
+
+<body>
+  <div class="container-fluid">
+    <div class="container-fluid sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="http://localhost:8000/index_signed.html">Auto Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/home.html">Home
+                <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/plaza.html">Plaza</a>
+            </li>
+          </ul>
+          <div class="row">
+            <div id="userbuttons" style="display:none">
+              <button type="button" id="sign_out" class="btn btn-outline-danger my-2 my-sm-0" jc-attached="true">Sign Out</button>
+            </div>
+            <div style="color:red">
+              <img id="usericon" src="./Route_files/account_circle-24px.svg">
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container-fluied">
+      <br>
+      <br>
+      <center>
+
+          </center><table id="table1" style="width:90%;table-layout: fixed;" class="table table-hover" align="center">
+        <caption style="caption-side:top;">
+          <h4>Trip Outline</h4>
+        </caption>
+        <thead>
+          
+        </thead>
+        <tbody>
+          <tr>
+            <th width="30%" scope="row">Departure From:</th>
+            <td id="start">Town A</td>
+          </tr>
+          <tr>
+            <th scope="row">Arrive at:</th>
+            <td id="end">Town B</td>
+          </tr>
+          <tr>
+            <th scope="row">Distance :</th>
+            <td>11 miles (17.7 kilometers)</td>
+          </tr>
+          <tr>
+            <th scope="row">Trip Duration : </th>
+            <td>1 hour(s)</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Route:
+            </th>
+            <td id="route" style="word-wrap：break-word;word-break:break-all">abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div id="map" align="center" class="container-fluid">
+        <p class="text-info">Show the route on map</p>
+        <img width="50px" src="./Route_files/map-24px.svg">
+      </div>
+    </div>
+    <div id="routemap" style="display:none" class="container-fluied">
+      <div align="center">
+        <iframe width="90%" src="./Route_files/embed.html" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./Route_files/functions.js.下载"></script>
+  <script type="text/javascript" src="./Route_files/getUrlParam.js.下载"></script>
+  <script type="text/javascript">
+  
+    $(function() {
+      var arr = [];
+      var count=0;
+      var param = "tag0";
+      var tag = UrlParam.paramValues(param);
+      while(tag!=null){
+        arr.push(tag);
+        count++;
+        param = "tag"+count;
+        tag = UrlParam.paramValues(param);
+      }
+      shuffle(arr,2);
+    });
+  </script>
+
+
+
+</body></html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Route</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJW4jsPlNKgv6jFm3B5Edp5ywgdqLWdmc&callback=initMap" async defer></script>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="container-fluid sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index_signed.html">Auto Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home
+                <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="plaza.html">Plaza</a>
+            </li>
+          </ul>
+          <div class="row">
+            <div id="userbuttons" style="display:none">
+              <button type="button" id="sign_out" class="btn btn-outline-danger my-2 my-sm-0">Sign Out</button>
+            </div>
+            <div style="color:red">
+              <img id="usericon" src="icon/account_circle-24px.svg" />
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="sharemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Share with ...</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td align="center">
+                    <img width=40px src="icon\_ionicons_svg_logo-facebook.svg" />
+                  </td>
+                  <td align="center">
+                    <img width=40px src="icon\_ionicons_svg_logo-googleplus.svg" />
+                  </td>
+                  <td align="center">
+                    <img width=40px src="icon\_ionicons_svg_logo-twitter.svg" />
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center"><a href=# class="text-secondary">Facebook</a></td>
+                  <td align="center"><a href=# class="text-secondary">Google+</a></td>
+                  <td align="center"><a href=# class="text-secondary">Twitter</a></td>
+                </tr>
+              </tbody>
+
+            </table>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluied">
+      <br>
+      <div class="container-fluied">
+        <div class="row">
+          <div class="col-md-1 col-sm-1">
+          </div>
+            <div id="back" class="col-md-3 col-sm-2">
+              <a class="text-dark" href=# onClick="javascript :history.back(-1);">
+            <img src="icon\arrow_back-24px.svg" />
+            <figcaption>Back</figcaption></a>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <table id="table1" style="width:90%;table-layout: fixed;" class="table table-hover" align="center">
+        <caption style="caption-side:top;">
+          <h4>Trip Outline</h4>
+        </caption>
+        <thead>
+          <th>
+
+          </th>
+          <td id="share" align="right" data-toggle="modal" data-target="#sharemodal">
+            Share your trip
+            <img src="icon/share-24px.svg" id="showmore">
+          </td>
+        </thead>
+        <tbody>
+          <tr>
+            <th width="30%" scope="row">Departure From:</th>
+            <td id="start">Town A</td>
+          </tr>
+          <tr>
+            <th scope="row">Arrive at:</th>
+            <td id="end">Town B</td>
+          </tr>
+          <tr>
+            <th scope="row">Distance :</th>
+            <td>11 miles (17.7 kilometers)</td>
+          </tr>
+          <tr>
+            <th scope="row">Trip Duration : </th>
+            <td>1 hour(s)</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Route:
+            </th>
+            <td id="route" style="word-wrap：break-word;word-break:break-all">Town A->Town B->Town C</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div id="map" align=center class="container-fluid">
+        <img width="50px" src="icon\map-24px.svg">
+        <figcation class="text-info">Show the route on map</figcaption>
+      </div>
+    </div>
+    <div id="routemap" style="display:none" class="container-fluied">
+      <div align="center">
+        <iframe width=90%
+          src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d209217.30762653367!2d135.58168629506042!3d34.98115294815374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x60010f1506feebef%3A0xef3c6e235d2e3ddf!2zNjggRnVrYWt1c2EgWWFidW5vdWNoaWNobywgRnVzaGltaSBXYXJkLCBLeW90bywg5Lqs6YO95bqc5pel5pys!3m2!1d34.967159099999996!2d135.7732662!4m5!1s0x600108d385dcfb07%3A0x2e7764fc095cd15f!2z5pel5pys5Lqs6YO95bqc5Lqs6YO95biC5Lic5bGx5Yy6IEtpeW9taXp1LCA0IENob21l4oiS77yR77yW77yW55WqIEtJWU9NSVpVIOS6rOmDveadseWxsQ!3m2!1d34.9970983!2d135.779555!4m5!1s0x60010984125b7101%3A0x665d699b74062e24!2zR2lvbihLeW90byBDaXR5IEJ1cykgU291dGhib3VuZCBHaW9ubWFjaGkgS2l0YWdhd2EsIOS4nOWxseWMuuS6rOmDveW4guS6rOmDveW6nCA2MDUtMDA3MyDml6XmnKw!3m2!1d35.0045272!2d135.77739499999998!4m5!1s0x6001a9fe8f0db9b7%3A0x7ef580d14be61e2b!2zU2FnYXRlbnJ5xatqaSBLdXJ1bWFtaWNoaWNoxY0sIOWPs-S6rOWMuuS6rOmDveW4guS6rOmDveW6nOaXpeacrA!3m2!1d35.0181575!2d135.680484!5e0!3m2!1sen!2sus!4v1575288107554!5m2!1sen!2sus"
+          width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/js/functions.js"></script>
+  <script type="text/javascript" src="assets/js/getUrlParam.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var arr = [];
+      var count = 0;
+      var param = "tag0";
+      var tag = UrlParam.paramValues(param);
+      while (tag != null) {
+        arr.push(tag);
+        count++;
+        param = "tag" + count;
+        tag = UrlParam.paramValues(param);
+      }
+      shuffle(arr, count);
+      var start = arr[0];
+      var end = arr[count - 1];
+
+      if (start != null) {
+        $("#start").text(start);
+      }
+      if (end != null) {
+        $("#end").text(end);
+      }
+      if (arr.length != 0) {
+        var route = "";
+        for (var i = 0; i < count; i++) {
+          route += arr[i];
+          if (i != count - 1) {
+            route += "->";
+          }
+        }
+        $("#route").text(route);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

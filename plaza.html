@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Plaza</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <div class="container-fluid">
+		<div class="container-fluid sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index_signed.html">Auto Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home
+                <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="plaza.html">Plaza</a>
+            </li>
+          </ul>
+          <div class="row">
+            <div id="userbuttons" style="display:none">
+              <button type="button" id="sign_out" class="btn btn-outline-danger my-2 my-sm-0">Sign Out</button>
+            </div>
+            <div style="color:red">
+              <img id="usericon" src="icon/account_circle-24px.svg" />
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Section -->
+    <section class="awe-section">
+      <div class="container">
+
+        <!-- title -->
+        <div class="title title__style-02">
+          <h2 class="title__title">Recommended for you</h2>
+        </div><!-- End / title -->
+
+        <div class="grid-css grid_css_style_02 grid-css--masonry" data-col-lg="2" data-col-md="2" data-col-sm="1" data-col-xs="1" data-gap="30">
+          <div class="filter">
+            <ul class="filter__list">
+              <li><a href="route.html" data-filter="*">All</a></li>
+              <li><a href="route.html" data-filter=".cat1">Africa</a></li>
+              <li><a href="route.html" data-filter=".cat2">Asia</a></li>
+              <li><a href="route.html" data-filter=".cat3">America</a></li>
+              <li><a href="route.html" data-filter=".cat4">Europe</a></li>
+							<li><a href="route.html" data-filter=".cat5">Oceania</a></li>
+            </ul>
+          </div>
+          <div class="grid__inner">
+            <div class="grid-sizer"></div>
+            <div class="grid-item cat1 cat4">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('assets/img/image_box_3/1.jpg');"><img src="assets/img/image_box_3/1.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Singapore</p><span class="box-image3__date">7 Days / 8 Nights</span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">Maldives Escape incl. Airfare</a></h6>
+                      <p class="box-image3__text">Nam suscipit nisi risus, et porttitor metus molestie a. Phasellus id quam id tur</p><a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat2 cat3">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('assets/img/image_box_3/2.jpg');"><img src="assets/img/image_box_3/2.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Singapore</p><span class="box-image3__date">7 Days / 8 Nights</span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">The Mekong Boutique River Cruise: Laos to China</a></h6>
+                      <p class="box-image3__text">Integer placerat ullamcorper urna nec rhoncus. Sed velit justo</p><a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat4 cat3">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('assets/img/image_box_3/3.jpg');"><img src="assets/img/image_box_3/3.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Ubud</p><span class="box-image3__date">7 Days / 8 Nights</span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">Vibrant Hong Kong: 3 Day</a></h6>
+                      <p class="box-image3__text">Curabitur elementum urna augue, eu porta purus gravida in. Cras consectetur, lor</p><a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat3 cat1">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('assets/img/image_box_3/4.jpg');"><img src="assets/img/image_box_3/4.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Chiang Mai</p><span class="box-image3__date">7 Days / 8 Nights</span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">The Mekong Boutique River Cruise: Laos to China</a></h6>
+                      <p class="box-image3__text">Duis porttitor libero ac egestas euismod. Maecenas quis felis turpis. Nulla quis</p><a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat1 cat2 cat3">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('assets/img/image_box_3/5.jpg');"><img src="assets/img/image_box_3/5.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Tokyo</p><span class="box-image3__date">7 Days / 8 Nights</span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">China Odyssey with Yangtze River Cruise</a></h6>
+                      <p class="box-image3__text">Maecenas lorem ex, euismod eget pulvinar non, facilisis ut leo. Quisque placerat</p><a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat2 cat4">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('assets/img/image_box_3/6.jpg');"><img src="assets/img/image_box_3/6.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Hoi An</p><span class="box-image3__date">7 Days / 8 Nights</span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">The Golden Land: Irrawaddy River Boutique Cruise</a></h6>
+                      <p class="box-image3__text">Duis porttitor libero ac egestas euismod. Maecenas quis felis turpis. Nulla quis</p><a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Vendors-->
+    <script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+    <script type="text/javascript" src="assets/vendors/swiper/swiper.jquery.js"></script>
+    <script type="text/javascript" src="assets/vendors/menu/menu.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery.select2/select2.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+    <!-- App-->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/functions.js"></script>
+  </div>
+</body>
+
+<div class="footer">
+  <hr />
+  <div class="container-fluid" align="center">
+    <p>2019 &copy; Copyright</p>
+  </div>
+
+</html>

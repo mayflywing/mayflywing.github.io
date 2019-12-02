@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Arrange</title>
+  <link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJW4jsPlNKgv6jFm3B5Edp5ywgdqLWdmc&callback=initMap" async defer></script>
+</head>
+
+
+<body>
+  <div class="container-fluid">
+    <div class="container-fluid sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index_signed.html">Auto Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home
+                <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="plaza.html">Plaza</a>
+            </li>
+          </ul>
+          <div class="row">
+            <div id="userbuttons" style="display:none">
+              <button type="button" id="sign_out" class="btn btn-outline-danger my-2 my-sm-0">Sign Out</button>
+            </div>
+            <div style="color:red">
+              <img id="usericon" src="icon/account_circle-24px.svg" />
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="title title__style-02">
+      <div align="center">
+        <h3 class="title__title">Select Your Destinations</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img height="400px" src="image/1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ninenzaka and Sannenzaka</h5>
+            <p class="card-text">Ninen-zaka Slope and Sannen-zaka Slope are iconic streets of Kyoto City, which represent Japan’s good old days. Once you get there, you can’t help taking pictures of this nostalgic and dreamy scenery.</p>
+            <button id="0" name="button1" type="button" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img height="400px" src="image/3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Fushimi Inari Shrine</h5>
+            <p class="card-text">Fushimi Inari Shrine is an important Shinto shrine in southern Kyoto. It is famous for its thousands of vermilion torii gates, which straddle a network of trails behind its main buildings.
+              <br /><br /><br /></p>
+            <button id="1" name="button2" type="button" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img height="400px" src="image/4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Arashiyama</h5>
+            <p class="card-text">Arashiyama is a pleasant, touristy district in the western outskirts of Kyoto. The area has been a popular destination since the Heian Period (794-1185), when nobles would enjoy its natural setting.<br /><br /></p>
+            <button id="2" name="button3" type="button" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+
+    </div>
+
+  </div>
+  </br></br></br></br>
+  <div class='container-fluid'>
+    <div class='container-fluid' id="tags">
+      <div class="title title__style-02">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
+            <h3 class="title__title">Or Type More</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5"><input name="tagsInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5"><input name="tagsInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5"><input name="tagsInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-outline-info" onclick=addTags()>Add More</button>
+        </div>
+        <button id="getroute" type="button" class="btn btn-outline-success">Get my route</a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript">
+    $("#getroute").click(function() {
+      var itemOriginal = document.getElementsByName("tagsInput");
+      //var arr = new Array(itemOriginal.length);
+      var url = "route.html?";
+      var count = 0;
+      for (var j = 0; j < itemOriginal.length; j++) {
+        if (itemOriginal.item(j).value != "") {
+          url += "tag" + count + "=" + itemOriginal.item(j).value+"&";
+          count++;
+        }
+      }
+      window.location.href = url;
+    });
+
+    var indexs = new Array();
+    var names = new Array("Ninenzaka and Sannenzaka", "Fushimi Inari Shrine", "Arashiyama");
+    $("button[name^='button']").click(function() {
+      var id = $(this).attr("id");
+      if ($(this).text() == "Undo") {
+        $(this).text("Select")
+        var itemOriginal = document.getElementsByName("tagsInput");
+        itemOriginal.item(indexs[id]).value = "";
+      } else {
+        $(this).text("Undo")
+        var itemOriginal = document.getElementsByName("tagsInput");
+        var arr = new Array(itemOriginal.length);
+        var add = false;
+        for (var j = 0; j < itemOriginal.length; j++) {
+          if (itemOriginal.item(j).value == "") {
+            itemOriginal.item(j).value = names[id];
+            indexs[id] = j;
+            add = true;
+            break;
+          }
+          arr[j] = itemOriginal.item(j).value;
+        }
+        if (!add) {
+          var str = '<div class="row"><div class="col-md-2"></div><div class="col-md-5"><input name="tagsInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div> </div>';
+          document.getElementById("tags").innerHTML += str;
+          var itemNew = document.getElementsByName("tagsInput");
+          for (var i = 0; i < arr.length; i++) {
+            itemNew.item(i).value = arr[i];
+          }
+          itemNew.item(i).value = names[id];
+          indexs[id] = i;
+        }
+      }
+    });
+  </script>
+  <script type="text/javascript" src="assets/js/functions.js"></script>
+</body>
+
+<div class="footer">
+  <hr />
+  <div class="container-fluid" align="center">
+    <p>2019 &copy; Copyright</p>
+  </div>
+</div>
+
+</html>
