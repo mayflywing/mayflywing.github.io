@@ -1,3 +1,5 @@
+(function ($) {
+
 //user icon toggle
 $("#usericon").click(function() {
   $("#userbuttons").toggle();
@@ -158,3 +160,4 @@ function random(seed) {
   var x =  Math.sin(seed)*10000;
   return x - Math.floor(x);
 }
+})();
