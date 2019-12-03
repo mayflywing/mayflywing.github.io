@@ -1,4 +1,4 @@
-var __username__ = "PeterPan";
+var __username__ = "User";
 var __password__ = "123456";
 
 

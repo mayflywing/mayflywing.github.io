@@ -112,13 +112,38 @@
         </div>
       </div>
     </div>
-  <!--End nav-->
-  <div class="container-fluid">
-    
-  </div>
+    <!--End nav-->
+    <div class="container-fluid">
+      <div class="comment-form-wrapper th-card mt-4">
+        <div class="text-center" id="login_required">  
+        </div>
+      </div>
+
+  <!---Leave some comments------>
+  <div id="respond" class="comment-respond">
+    <h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/accurateappraisals-com-provides-new-service-to-evaluate-domain-names/#respond" style="display:none;">Cancel
+          Reply</a></small></h3>
+    <form id="fl-comment-form" class="fl-comment-form">
+      <label for="comment">Comment</label><textarea name="comment" class="form-control" cols="60" rows="8" tabindex="4"></textarea><br /><label for="author">Name (required)</label>
+      <input type="text" name="author" class="form-control" value="" tabindex="1" aria-required="true" /><br />
+      <label for="email">Email (will not be published) (required)</label>
+      <input type="text" name="email" class="form-control" value="" tabindex="2" aria-required="true" /><br />
+      <p class="form-submit"><input name="submit" type="submit" id="fl-comment-form-submit" class="btn btn-primary" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='358' id='comment_post_ID' />
+        <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+      </p>
+      <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1dce733520" /></p>
+      <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="164" /></p>
+    </form>
+  </div><!-- #respond -->
+
   </div>
   <script type="text/javascript" src="assets\js\functions.js"></script>
   <script type="text/javascript" src="Data\data.js"></script>
+  <script type="text/javascript">
+    if(sessionStorage.getItem('__signed__')!="ture"){
+      $("#login_required").html('<p class="lead">Sign in to Comment</p><p>You need be a registered member to post a comment.</p>');
+    }
+  </script>
 </body>
 
 </html>
