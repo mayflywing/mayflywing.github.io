@@ -242,24 +242,105 @@
   <script type="text/javascript" src="assets/js/functions.js"></script>
   <script type="text/javascript" src="assets/js/getUrlParam.js"></script>
   <script type="text/javascript" src="Data\data.js"></script>
+  <script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWF5Zmx5d2luZyIsImEiOiJjazNwYTlybWkwMTJkM2RwZTJlYWpuM2prIn0.IrQ8Z6PKG84Yr_VemvjuCA';
+  var places = {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "properties": {
+  "description": "Raffles City",
+  "icon":"embassy"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [103.85314730000005,1.29401]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "St. Andrew’s Cathedral",
+  "icon":"embassy"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [103.85231499999998,1.292488]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "Funan The IT Mall",
+  "icon": "embassy"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [103.85015240000007,1.2911354]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "City Hall",
+  "icon": "embassy"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [103.85203760000002,1.2930838]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "Old Parliament",
+  "icon": "embassy"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [103.85106380000002,1.2886837]
+  }
+  }]
+  };
+
+  var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v8',
+  center: [103.85314730000005, 1.29401],
+  zoom: 15
+  });
+
+  map.on('load', function() {
+  // Add a GeoJSON source containing place coordinates and information.
+  map.addSource("places", {
+  "type": "geojson",
+  "data": places
+  });
+
+  map.addLayer({
+  "id": "poi-labels",
+  "type": "symbol",
+  "source": "places",
+  "layout": {
+  "text-field": ["get", "description"],
+  "text-variable-anchor": ["top", "bottom", "left", "right"],
+  "text-radial-offset": 0.5,
+  "text-justify": "auto",
+  "icon-image": ["concat", ["get", "icon"], "-15"]
+  }
+  });
+  });
+  </script>
+
+
   <script type="text/javascript">
-
-  var my_places = {"type": "FeatureCollection","features":new Array()};
-
+  //let a = __distance__["Ninenzaka and Sannenzaka"]["Fushimi Inari Shrine"][0]["distance"];
+  //alert(a);
     $(function() {
-      var arr = [];
-      var count = 0;
-      var param = "tag0";
-      var tag = sessionStorage.getItem(param);
-      while (tag != null) {
-        arr.push(tag);
-        count++;
-        param = "tag" + count;
-        tag = sessionStorage.getItem(param);
-      }
-      shuffle(arr, count);
+      var count = 5;
+      var arr = new Array("Raffles City","St. Andrew’s Cathedral","Funan The IT Mall","City Hall","Old Parliament");
+      var dis = new Array("0.27km","0.3km","1km","0.55km");
+      var car_time = new Array("1min","1min","3min","6min"); 
+      var foot_time = new Array("5min","4min","5min","7min"); 
       var start = arr[0];
       var end = arr[count - 1];
+      
 
       if (start != null) {
         $("#start").text(start);
@@ -281,32 +362,16 @@
             var a = arr[i];
             var b = arr[i+1];
             var r = a+" -> "+b;
-            var d = __distance__[a][b][0]["distance"];
+            var d = dis[i];
             total_distance+=parseFloat(d);
-            var c = __distance__[a][b][1]["time"];
-            var f = __distance__[a][b][2]["time"];
+            var c = car_time[i];
+            var f = foot_time[i];
             str+='<tr><th scope="row">'+r+'</th><td align=center>'+c+'</td><td align=center>'+f+'</td><td align=center>'+d+'</td></tr>';
           }
         }
         $("#route").text(route);
         $("#detail_route").html(str);
         $("#total_distance").html(total_distance+"km");
-
-        for(let i=0;i<count;i++){
-          var f = {"type": "Feature",  "properties": {
-            "description": "",
-            "icon":"harbour"
-            },
-             "geometry": {
-              "type": "Point",
-              "coordinates": new Array()
-            }};
-          f.properties.description = arr[i];
-          f.geometry.coordinate = __cordinates__[arr[i]];
-          my_places.features.push(f);
-
-          //alert(my_places.features[i].properties.description);
-        }
       }
     });
 
@@ -318,66 +383,7 @@
       }, 800, );
     });
 
-    function shuffle(arra1, seed) {
-      var ctr = arra1.length;
-      var temp, index;
-      // While there are elements in the array
-      while (ctr > 0) {
-        // Pick a random index
-        index = Math.floor(random(seed++) * ctr);
-        // Decrease ctr by 1
-        ctr--;
-        // And swap the last element with it
-        temp = arra1[ctr];
-        arra1[ctr] = arra1[index];
-        arra1[index] = temp;
-      }
-      return arra1;
-    }
-
-    function random(seed) {
-      var x = Math.sin(seed) * 10000;
-      return x - Math.floor(x);
-    }
   </script>
-
-  <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoibWF5Zmx5d2luZyIsImEiOiJjazNwYTlybWkwMTJkM2RwZTJlYWpuM2prIn0.IrQ8Z6PKG84Yr_VemvjuCA';
-  var places = my_places;
-  var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-  center: [135.74821799999995,35.0142299],
-  zoom: 15
-  });
-
-  map.on('load', function() {
-  // Add a GeoJSON source containing place coordinates and information.
-  map.addSource("places", {
-  "type": "geojson",
-  "data": places
-  });
-
-  map.addLayer({
-  "id": "makers",
-  "type": "symbol",
-  "source": "places",
-  "layout": {
-  "text-field": ["get", "description"],
-  "text-variable-anchor": ["top", "bottom", "left", "right"],
-  "text-radial-offset": 0.5,
-  "text-justify": "auto",
-  "icon-image": ["concat", ["get", "icon"], "-15"]
-},
-  "paint": {
-    "icon-color" : "#ff0000"
-    }
-  });
-  });
-  </script>
-
-
-
 
 </body>
 

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Recommend</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+  </link>
+  <link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!--nav-->
+    <div class="container-fluid sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Auto Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recommend.html">Recommend</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="arrange.html">Plan</a>
+            </li>
+            <li class="nav-item">
+              <a id="saved_trips" class="nav-link" href="#">Saved Trips</a>
+            </li>
+          </ul>
+          <div class="row">
+            <div id="userbuttons" style="display:none"></div>
+            <img id="usericon" src="icon/account_circle-24px.svg" />
+            <figcaption id="welcome_part">
+            </figcaption>
+          </div>
+
+      </nav>
+    </div>
+    <!--modal 1-->
+    <div class="modal fade" id="Moda1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="Username" class="col-form-label">Username:</label>
+                <input name="required" type="text" class="form-control" id="Username">
+              </div>
+              <div class="form-group">
+                <label for="Password" class="col-form-label">Password:</label>
+                <input name="required" type="password" class="form-control" id="Password">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button name="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="sign_in">Sign in</a>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--modal 2-->
+    <div class="modal fade" id="Moda2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="Email" class="col-form-label">Email:</label>
+                <input name="required" type="text" class="form-control" id="Email">
+              </div>
+              <div class="form-group">
+                <label for="Username" class="col-form-label">Username:</label>
+                <input name="required" type="text" class="form-control" id="Username_">
+              </div>
+              <div class="form-group">
+                <label for="Password" class="col-form-label">Password:</label>
+                <input name="required" type="password" class="form-control" id="Password_"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="Confirm Password" class="col-form-label">Confirm Password:</label>
+                <input type="password" class="form-control" id="ConfirmPassword"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button name="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="sign_up">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--End nav-->
+    <!-- Section -->
+    <section class="awe-section">
+      <div class="container">
+
+        <!-- title -->
+        <div class="title title__style-02">
+          <h2 class="title__title">Recommended for you</h2>
+        </div><!-- End / title -->
+
+        <div class="grid-css grid_css_style_02 grid-css--masonry" data-col-lg="2" data-col-md="2" data-col-sm="1" data-col-xs="1" data-gap="30">
+          <div class="filter">
+            <ul class="filter__list">
+              <li><a href="#" data-filter="*">All</a></li>
+              <li><a href="#" data-filter=".cat1">Africa</a></li>
+              <li><a href="#" data-filter=".cat2">Asia</a></li>
+              <li><a href="#" data-filter=".cat3">America</a></li>
+              <li><a href="#" data-filter=".cat4">Europe</a></li>
+              <li><a href="#" data-filter=".cat5">Oceania</a></li>
+            </ul>
+          </div>
+          <div class="grid__inner">
+            <div class="grid-sizer"></div>
+            <div class="grid-item cat2">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="singapore_route.html" style="background-image: url('image/singapore.jpg');">
+                      </a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Singapore</p><span class="box-image3__date"></span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="singapore_route.html">Singapore</a></h6>
+                      <a class="box-image3__comment" href="comment.html">View comments</a>
+                      <p class="box-image3__text">
+                        Capitalising on its melting pot of cultures, Singapore is finally getting some spark, and is fast becoming one of Asia’s hit-list destinations.
+                      </p>
+                      <a class="box-image3__view" href="singapore_route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat4">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('image/italy.jpg');"><img src="assets/img/image_box_3/2.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Italy</p><span class="box-image3__date"> </span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">Italy</a></h6>
+                      <a class="box-image3__comment" href="comment.html">View comments</a>
+                      <p class="box-image3__text">
+                      Arguably Europe’s most enticing country, Italy charms visitors with irresistible food, awesome architecture, and unparalleled art.
+                      </p>
+                      <a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat4">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('image/Switzerland.jpg');">
+                      </a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Switzerland</p><span class="box-image3__date"> </span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">Switzerland</a></h6>
+                      <a class="box-image3__comment" href="comment.html">View comments</a>
+                      <p class="box-image3__text">
+                      Contemporary Switzerland, land of four languages, is all about once-in-a-lifetime journeys, heart-racing Alpine pursuits and urban culture.
+                
+                      </p>
+                      <a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat3">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('image/Cincinnati.jpg');">
+                    </a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Cincinnati</p><span class="box-image3__date"> </span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour">
+                        <a href="route.html">Cincinnati</a></h6>
+                        <a class="box-image3__comment" href="comment.html">View comments</a>
+                      <p class="box-image3__text">
+                      Cincinnati splashes up the Ohio River's banks. Its prettiness surprises, as do its neon troves, and its European-style neighborhoods. 
+                    </p>
+                      <a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat5">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('image/Australia.jpg');"><img src="assets/img/image_box_3/5.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Australia</p><span class="box-image3__date"> </span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">Australia</a></h6>
+                      <a class="box-image3__comment" href="comment.html">View comments</a>
+                      <p class="box-image3__text">
+                      Australia is the unexpected: a place where the world’s oldest cultures share vast ochre plains, stylish laneways and unimaginably blue waters.
+                    </p>
+                      <a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-item cat1">
+              <div class="grid-item__inner">
+                <div class="grid-item__content-wrapper">
+                  <!-- box-image3 -->
+                  <div class="box-image3">
+                    <div class="box-image3__box"><a class="box-image3__bg" href="route.html" style="background-image: url('image/zambia.jpg');"><img src="assets/img/image_box_3/6.jpg" alt="" /></a>
+                      <div class="box-image3__info">
+                        <p class="box-image3__country">Zambia</p><span class="box-image3__date"> </span>
+                      </div>
+                    </div>
+                    <div class="box-image3__info_right">
+                      <h6 class="box-image3__tour"><a href="route.html">Zambia</a></h6>
+                      <a class="box-image3__comment" href="comment.html">View comments</a>
+                      <p class="box-image3__text">The rewards of travelling in Zambia are those of exploring remote, mesmerising wilderness as full of an astonishing diversity of wildlife.
+                      </p>
+                      <a class="box-image3__view" href="route.html">View tour</a>
+                    </div>
+                  </div><!-- End / box-image3 -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Vendors-->
+    <script type="text/javascript" src="assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script type="text/javascript" src="assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+    <script type="text/javascript" src="assets/vendors/swiper/swiper.jquery.js"></script>
+    <script type="text/javascript" src="assets/vendors/menu/menu.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery.select2/select2.js"></script>
+    <script type="text/javascript" src="assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+    <!-- App-->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/functions.js"></script>
+    <script type="text/javascript" src="Data\data.js"></script>
+  </div>
+</body>
+
+</html>

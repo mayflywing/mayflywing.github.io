@@ -400,6 +400,27 @@
     border-radius: 4px;
 }
 
+.box-image3__comment{
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  padding-right: 30px;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+.box-image3__comment:before{
+  content: "\F086";
+  font-family: Fontawesome;
+  font-size: 18px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  line-height: 14px;
+  text-align: center;
+}
+
 @media (max-width: 479px) {
     .box-image3 {
         -ms-flex-direction: column;

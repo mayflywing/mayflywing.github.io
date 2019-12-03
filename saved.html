@@ -2,24 +2,20 @@
 <html lang="en">
 
 <head>
-  <title>Auto planner</title>
+  <title>Saved Trips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" id="app-stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </head>
-<style type="text/css">
-.jumbotron{
-  background-image:url(image/background1.jpg);
-  background-size:cover;
-  color:white;
-}
-</style>
+
 <body>
-  <div class="container-fluid ">
+  <div class="container-fluid">
     <!--nav-->
     <div class="container-fluid sticky-top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +36,7 @@
               <a class="nav-link" href="arrange.html">Plan</a>
             </li>
             <li class="nav-item">
-              <a id="saved_trips" class="nav-link" href="#">Saved Trips</a>
+              <a class="nav-link" href="saved.html">Saves Trips</a>
             </li>
           </ul>
           <div class="row">
@@ -120,88 +116,61 @@
     </div>
   <!--End nav-->
     <div class="container-fluid">
-      <div class="text-center">
-        <div name="flex" class="jumbotron jumbotron-fluid" >
-          <h1 class="display-4">Plan Your Trip!</h1>
-          <p class="lead">
-            I should like to rise and go, where the golden apples grow. —— Robert Louis Stevenson (1850-1894)</p>
-          <hr class="my-4">
-          <h1>Where do you want to go?</h1>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Neverland" aria-label="Neverland" aria-describedby="button-addon2"></div>
-              <div class="col-md-3">
-                <a href="arrange.html" class="btn btn-outline-light" role="button">Head out!</a></div>
-            </div>
-          </div>
+      <div class="title title__style-02">
+        <div align="center">
+          <h3 class="title__title">Your Saved Trips</h3>
         </div>
       </div>
-    </div>
-
-
-    <div align=center class="container-fluid">
-      <label>Expolre More</label><br />
-      <img width="50px" src="icon/arrow_drop_down_circle-24px.svg" id="showmore">
-    </div>
-    <div align=center id="hidden_images">
-      <div style="width:70%;display:none;" id="siliding_images">
-        <div class="bd-example">
-          <div id="carouselExampleCaptions" class="carousel slid" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="route.html"><img class="img-fluid" src="image/2.jpg"></a>
-                <div class="carousel-caption">
-                  <h5></h5>
-                  <p></p>
-                </div>
-
-              </div>
-              <div class="carousel-item">
-                <a href="route.html"><img class="img-fluid" src="image/5.jpg"></a>
-                <div class="carousel-caption">
-                  <h5></h5>
-                  <p></p>
-                </div>
-
-              </div>
-              <div class="carousel-item">
-                <a href="route.html"><img class="img-fluid" src="image/6.jpg"></a>
-                <div class="carousel-caption">
-                  <h5></h5>
-                  <p></p>
-                </div>
-              </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+      <div class="col-md-9">
+        <ul class="list-unstyled">
+          <li class="media my-4">
+            <img width=75px height=100px src="image/singapore_.jpg" alt="" class="mr-3 rounded-lg">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Singapore</h5>
+              Capitalising on its melting pot of cultures, Singapore is finally getting some spark, and is fast becoming one of Asia’s hit-list destinations.
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
+          </li>
+          <li class="media my-4">
+            <img width=75px height=100px src="image/italy_.jpg" class="mr-3 rounded-lg">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Italy</h5>
+              Arguably Europe’s most enticing country, Italy charms visitors with irresistible food, awesome architecture, and unparalleled art.
+            </div>
+          </li>
+          <li class="media my-4">
+            <img width=75px height=100px src="image/Switzerland_.jpg" class="mr-3 rounded-lg">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Switzerland</h5>
+              Contemporary Switzerland, land of four languages, is all about once-in-a-lifetime journeys, heart-racing Alpine pursuits and urban culture.
+            </div>
+          </li>
+          <li class="media my-4">
+            <img width=75px height=100px src="image/Cincinnati_.jpg" alt="" class="mr-3 rounded-lg">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Cincinnati</h5>
+              Cincinnati splashes up the Ohio River's banks. Its prettiness surprises, as do its neon troves, and its European-style neighborhoods.
+            </div>
+          </li>
+          <li class="media my-4">
+            <img width=75px height=100px src="image/Australia_.jpg" alt="" class="mr-3 rounded-lg">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1">Australia</h5>
+              Australia is the unexpected: a place where the world’s oldest cultures share vast ochre plains, stylish laneways and unimaginably blue waters.
+            </div>
+          </li>
+        </ul>
       </div>
+      <div class="col-md-2"></div>
+      </div>
+
+
     </div>
   </div>
-  <script type="text/javascript" src="assets\js\functions.js"></script>
+  <script type="text/javascript" src="assets/js/getUrlParam.js"></script>
+  <script type="text/javascript" src="assets/js/functions.js"></script>
   <script type="text/javascript" src="Data\data.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      var h = document.body.clientHeight * 0.85;
-      $("div[name='flex']").css({
-        "min-height": h
-      });
-    });
-  </script>
 </body>
 
 </html>
